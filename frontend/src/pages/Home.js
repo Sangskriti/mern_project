@@ -7,13 +7,13 @@ const Home = () => {
   const { token } = useContext(AuthContext);
 
   const fetchStories = async () => {
-    const res = await axios.get('http://localhost:5000/api/stories');
+    const res = await axios.get('https://mern-project-q04m.onrender.com/api/stories');
     setStories(res.data);
   };
 
   const toggleBookmark = async (id) => {
     if (!token) return alert("Please login first!");
-    await axios.post(`http://localhost:5000/api/stories/${id}/bookmark`, {}, {
+    await axios.post(`https://mern-project-q04m.onrender.com/api/stories/${id}/bookmark`, {}, {
       headers: { Authorization: `Bearer ${token}` }
     });
     fetchStories();

@@ -18,7 +18,7 @@ const Bookmarks = () => {
     const fetchBookmarks = async () => {
       try {
         
-        const res = await axios.get('http://localhost:5000/api/stories/saved', {
+        const res = await axios.get('https://mern-project-q04m.onrender.com/api/stories/saved', {
           headers: { Authorization: `Bearer ${token}` } 
         });
         
